@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<link rel="StyleSheet" href="./table.css" type="text/css" />
+
+<div>
+    <nav>
+        <ul>
+            <li style="border-right: 1px solid black;"><a href="./main.html">세계지도</a></li>
+            <li style="border-right: 1px solid black;"><a href="WorldList.html">국가목록</a></li>
+            <li style="float: right;"><a href="login.html">Log in</a></li>
+            <li style="float: right;"><a href="sign_up.html">Sign up</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Year');
+        data.addColumn('number', 'India Population');
+        data.addRows([
+            [new Date(1950, 6, 1), 346278821],
+            [new Date(1951, 6, 1), 353870057],
+            [new Date(1952, 6, 1), 361874903],
+            [new Date(1953, 6, 1), 370104573],
+            [new Date(1954, 6, 1), 378687138],
+            [new Date(1955, 6, 1), 387700887],
+            [new Date(1956, 6, 1), 396988903],
+            [new Date(1957, 6, 1), 406253888],
+            [new Date(1958, 6, 1), 415777442],
+            [new Date(1959, 6, 1), 425780669],
+            [new Date(1960, 6, 1), 435990338],
+            [new Date(1961, 6, 1), 446564729],
+            [new Date(1962, 6, 1), 457283090],
+            [new Date(1963, 6, 1), 468138575],
+            [new Date(1964, 6, 1), 479229598],
+            [new Date(1965, 6, 1), 490140146],
+            [new Date(1966, 6, 1), 500740247],
+            [new Date(1967, 6, 1), 511606372],
+            [new Date(1968, 6, 1), 522716889],
+            [new Date(1969, 6, 1), 533880544],
+            [new Date(1970, 6, 1), 545864268],
+            [new Date(1971, 6, 1), 558096387],
+            [new Date(1972, 6, 1), 570482142],
+            [new Date(1973, 6, 1), 583465598],
+            [new Date(1974, 6, 1), 597041391],
+            [new Date(1975, 6, 1), 611309535],
+            [new Date(1976, 6, 1), 625861883],
+            [new Date(1977, 6, 1), 640801103],
+            [new Date(1978, 6, 1), 655728229],
+            [new Date(1979, 6, 1), 671155747],
+            [new Date(1980, 6, 1), 687354025],
+            [new Date(1981, 6, 1), 703696250],
+            [new Date(1982, 6, 1), 720313473],
+            [new Date(1983, 6, 1), 737372681],
+            [new Date(1984, 6, 1), 754875449],
+            [new Date(1985, 6, 1), 772647793],
+            [new Date(1986, 6, 1), 790689978],
+            [new Date(1987, 6, 1), 808931270],
+            [new Date(1988, 6, 1), 827342990],
+            [new Date(1989, 6, 1), 846039529],
+            [new Date(1990, 6, 1), 864972221],
+            [new Date(1991, 6, 1), 883927600],
+            [new Date(1992, 6, 1), 902957070],
+            [new Date(1993, 6, 1), 922118387],
+            [new Date(1994, 6, 1), 941163767],
+            [new Date(1995, 6, 1), 960301044],
+            [new Date(1996, 6, 1), 979678458],
+            [new Date(1997, 6, 1), 999133762],
+            [new Date(1998, 6, 1), 1018665080],
+            [new Date(1999, 6, 1), 1038225823],
+            [new Date(2000, 6, 1), 1057922733],
+            [new Date(2001, 6, 1), 1077898575],
+            [new Date(2002, 6, 1), 1097600380],
+            [new Date(2003, 6, 1), 1116803006],
+            [new Date(2004, 6, 1), 1135991513],
+            [new Date(2005, 6, 1), 1154676322],
+            [new Date(2006, 6, 1), 1172878890],
+            [new Date(2007, 6, 1), 1190676021],
+            [new Date(2008, 6, 1), 1207930964],
+            [new Date(2009, 6, 1), 1225524753],
+            [new Date(2010, 6, 1), 1243481564],
+            [new Date(2011, 6, 1), 1261224954],
+            [new Date(2012, 6, 1), 1278674502],
+            [new Date(2013, 6, 1), 1295829511],
+            [new Date(2014, 6, 1), 1312277191],
+            [new Date(2015, 6, 1), 1328024498],
+            [new Date(2016, 6, 1), 1343944296],
+            [new Date(2017, 6, 1), 1359657400],
+            [new Date(2018, 6, 1), 1374659064],
+            [new Date(2019, 6, 1), 1389030312],
+            [new Date(2020, 6, 1), 1402617695],
+            [new Date(2021, 6, 1), 1414203896],
+            [new Date(2022, 6, 1), 1425423212],
+            [new Date(2023, 6, 1), 1438069596],
+            [new Date(2024, 6, 1), 1450935791]
+        ]);
+        
+        var options = {
+            curveType: 'function',
+            focusTarget: 'category',
+            legend: { position: 'top' },
+            hAxis: { title: '연도', format: 'yyyy'},
+            vAxis: { title: '인구 수', minValue: 0 }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>

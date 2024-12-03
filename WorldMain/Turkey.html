@@ -1,0 +1,127 @@
+<meta charset="UTF-8">
+<link rel="StyleSheet" href="./table.css" type="text/css" />
+
+<div>
+    <nav>
+        <ul>
+            <li style="border-right: 1px solid black;"><a href="./main.html">세계지도</a></li>
+            <li style="border-right: 1px solid black;"><a href="WorldList.html">국가목록</a></li>
+            <li style="float: right;"><a href="login.html">Log in</a></li>
+            <li style="float: right;"><a href="sign_up.html">Sign up</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Year');
+        data.addColumn('number', 'Turkey Population');
+        data.addColumn({type: 'string', role: 'annotation'});
+        data.addColumn({type: 'string', role: 'annotationtext', 'p': {'html': true}});
+
+        data.addRows([
+            [new Date(1950, 6, 1), 21021140, null, null],
+            [new Date(1951, 6, 1), 21643880, null, null],
+            [new Date(1952, 6, 1), 22290092, null, null],
+            [new Date(1953, 6, 1), 22958548, null, null],
+            [new Date(1954, 6, 1), 23636109, null, null],
+            [new Date(1955, 6, 1), 24310511, null, null],
+            [new Date(1956, 6, 1), 25057602, null, null],
+            [new Date(1957, 6, 1), 25880914, null, null],
+            [new Date(1958, 6, 1), 26704962, null, null],
+            [new Date(1959, 6, 1), 27526341, null, null],
+            [new Date(1960, 6, 1), 28329898, null, null],
+            [new Date(1961, 6, 1), 29119238, null, null],
+            [new Date(1962, 6, 1), 29916147, null, null],
+            [new Date(1963, 6, 1), 30726841, null, null],
+            [new Date(1964, 6, 1), 31543072, null, null],
+            [new Date(1965, 6, 1), 32345220, null, null],
+            [new Date(1966, 6, 1), 33177672, null, null],
+            [new Date(1967, 6, 1), 34050421, null, null],
+            [new Date(1968, 6, 1), 34921684, null, null],
+            [new Date(1969, 6, 1), 35787774, null, null],
+            [new Date(1970, 6, 1), 36638465, null, null],
+            [new Date(1971, 6, 1), 37518611, null, null],
+            [new Date(1972, 6, 1), 38430221, null, null],
+            [new Date(1973, 6, 1), 39329533, null, null],
+            [new Date(1974, 6, 1), 40210234, null, null],
+            [new Date(1975, 6, 1), 41053126, null, null],
+            [new Date(1976, 6, 1), 41899984, null, null],
+            [new Date(1977, 6, 1), 42773298, null, null],
+            [new Date(1978, 6, 1), 43645306, null, null],
+            [new Date(1979, 6, 1), 44510429, null, null],
+            [new Date(1980, 6, 1), 45408815, null, null],
+            [new Date(1981, 6, 1), 46321190, null, null],
+            [new Date(1982, 6, 1), 47322096, null, null],
+            [new Date(1983, 6, 1), 48447410, null, null],
+            [new Date(1984, 6, 1), 49574069, null, null],
+            [new Date(1985, 6, 1), 50687115, null, null],
+            [new Date(1986, 6, 1), 51777772, null, null],
+            [new Date(1987, 6, 1), 52843670, null, null],
+            [new Date(1988, 6, 1), 53909626, null, null],
+            [new Date(1989, 6, 1), 54976723, null, null],
+            [new Date(1990, 6, 1), 56015628, null, null],
+            [new Date(1991, 6, 1), 57009887, null, null],
+            [new Date(1992, 6, 1), 57990118, null, null],
+            [new Date(1993, 6, 1), 58999167, null, null],
+            [new Date(1994, 6, 1), 60033836, null, null],
+            [new Date(1995, 6, 1), 61024503, null, null],
+            [new Date(1996, 6, 1), 61951134, null, null],
+            [new Date(1997, 6, 1), 62852966, null, null],
+            [new Date(1998, 6, 1), 63734383, null, null],
+            [new Date(1999, 6, 1), 64591923, null, null],
+            [new Date(2000, 6, 1), 65425961, null, null],
+            [new Date(2001, 6, 1), 66245128, null, null],
+            [new Date(2002, 6, 1), 67048795, null, null],
+            [new Date(2003, 6, 1), 67831730, null, null],
+            [new Date(2004, 6, 1), 68592617, null, null],
+            [new Date(2005, 6, 1), 69329557, null, null],
+            [new Date(2006, 6, 1), 70045349, null, null],
+            [new Date(2007, 6, 1), 70750586, null, null],
+            [new Date(2008, 6, 1), 71562338, null, null],
+            [new Date(2009, 6, 1), 72464848, null, null],
+            [new Date(2010, 6, 1), 73346769, null, null],
+            [new Date(2011, 6, 1), 74215203, null, null],
+            [new Date(2012, 6, 1), 75197198, null, null],
+            [new Date(2013, 6, 1), 76403031, null, null],
+            [new Date(2014, 6, 1), 78036154, '난민 유입으로 인한 인구 증가', 'https://www.bbc.com/korean/features-58168465'],
+            [new Date(2015, 6, 1), 80014226, null, null],
+            [new Date(2016, 6, 1), 81652088, null, null],
+            [new Date(2017, 6, 1), 83083662, null, null],
+            [new Date(2018, 6, 1), 84415969, null, null],
+            [new Date(2019, 6, 1), 85357672, null, null],
+            [new Date(2020, 6, 1), 86091692, null, null],
+            [new Date(2021, 6, 1), 86686253, null, null],
+            [new Date(2022, 6, 1), 87058473, null, null],
+            [new Date(2023, 6, 1), 87270501, null, null],
+            [new Date(2024, 6, 1), 87473805, null, null]
+        ]);
+        var options = {
+            curveType: 'function',
+            focusTarget: 'category',
+            legend: { position: 'top' },
+            hAxis: { title: '연도', format: 'yyyy'},
+            vAxis: { title: '인구 수', minValue: 0 }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        google.visualization.events.addListener(chart, 'select', function() {
+            var selection = chart.getSelection();
+            if (selection.length > 0) {
+                var row = selection[0].row;
+                var url = data.getValue(row, 3);
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            }
+        });
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
