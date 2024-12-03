@@ -1,0 +1,115 @@
+<meta charset="UTF-8">
+<link rel="StyleSheet" href="../table.css" type="text/css" />
+
+<div>
+    <nav>
+        <ul>
+            <li style="border-right: 1px solid black;"><a href="../WorldMain/index.html">세계지도</a></li>
+            <li style="border-right: 1px solid black;"><a href="WorldList.html">국가목록</a></li>
+            <li style="float: right;"><a href="login.html">Log in</a></li>
+            <li style="float: right;"><a href="sign_up.html">Sign up</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Year');
+        data.addColumn('number', 'United Kingdom Population');
+
+        data.addRows([
+            [new Date(1950, 6, 1), 50121017],
+            [new Date(1951, 6, 1), 50346815],
+            [new Date(1952, 6, 1), 50496234],
+            [new Date(1953, 6, 1), 50727037],
+            [new Date(1954, 6, 1), 50958249],
+            [new Date(1955, 6, 1), 51176747],
+            [new Date(1956, 6, 1), 51400459],
+            [new Date(1957, 6, 1), 51655912],
+            [new Date(1958, 6, 1), 51935644],
+            [new Date(1959, 6, 1), 52226471],
+            [new Date(1960, 6, 1), 52538548],
+            [new Date(1961, 6, 1), 52884948],
+            [new Date(1962, 6, 1), 53272830],
+            [new Date(1963, 6, 1), 53652936],
+            [new Date(1964, 6, 1), 54009135],
+            [new Date(1965, 6, 1), 54359020],
+            [new Date(1966, 6, 1), 54676344],
+            [new Date(1967, 6, 1), 54973661],
+            [new Date(1968, 6, 1), 55240645],
+            [new Date(1969, 6, 1), 55456207],
+            [new Date(1970, 6, 1), 55663801],
+            [new Date(1971, 6, 1), 55890372],
+            [new Date(1972, 6, 1), 56079239],
+            [new Date(1973, 6, 1), 56188791],
+            [new Date(1974, 6, 1), 56224550],
+            [new Date(1975, 6, 1), 56220143],
+            [new Date(1976, 6, 1), 56201138],
+            [new Date(1977, 6, 1), 56175829],
+            [new Date(1978, 6, 1), 56175556],
+            [new Date(1979, 6, 1), 56218763],
+            [new Date(1980, 6, 1), 56282103],
+            [new Date(1981, 6, 1), 56304592],
+            [new Date(1982, 6, 1), 56292755],
+            [new Date(1983, 6, 1), 56332058],
+            [new Date(1984, 6, 1), 56451313],
+            [new Date(1985, 6, 1), 56606414],
+            [new Date(1986, 6, 1), 56751923],
+            [new Date(1987, 6, 1), 56886024],
+            [new Date(1988, 6, 1), 57026546],
+            [new Date(1989, 6, 1), 57182136],
+            [new Date(1990, 6, 1), 57367862],
+            [new Date(1991, 6, 1), 57555192],
+            [new Date(1992, 6, 1), 57719272],
+            [new Date(1993, 6, 1), 57861037],
+            [new Date(1994, 6, 1), 58003203],
+            [new Date(1995, 6, 1), 58154635],
+            [new Date(1996, 6, 1), 58298565],
+            [new Date(1997, 6, 1), 58447089],
+            [new Date(1998, 6, 1), 58626819],
+            [new Date(1999, 6, 1), 58838657],
+            [new Date(2000, 6, 1), 59057338],
+            [new Date(2001, 6, 1), 59288090],
+            [new Date(2002, 6, 1), 59540763],
+            [new Date(2003, 6, 1), 59820385],
+            [new Date(2004, 6, 1), 60169967],
+            [new Date(2005, 6, 1), 60596108],
+            [new Date(2006, 6, 1), 61051094],
+            [new Date(2007, 6, 1), 61535855],
+            [new Date(2008, 6, 1), 62027306],
+            [new Date(2009, 6, 1), 62506226],
+            [new Date(2010, 6, 1), 63006483],
+            [new Date(2011, 6, 1), 63509285],
+            [new Date(2012, 6, 1), 63960484],
+            [new Date(2013, 6, 1), 64389388],
+            [new Date(2014, 6, 1), 64865916],
+            [new Date(2015, 6, 1), 65382110],
+            [new Date(2016, 6, 1), 65893358],
+            [new Date(2017, 6, 1), 66354471],
+            [new Date(2018, 6, 1), 66752475],
+            [new Date(2019, 6, 1), 67110958],
+            [new Date(2020, 6, 1), 67351861],
+            [new Date(2021, 6, 1), 67668792],
+            [new Date(2022, 6, 1), 68179315],
+            [new Date(2023, 6, 1), 68682962],
+            [new Date(2024, 6, 1), 69138192]
+        ]);
+        var options = {
+            curveType: 'function',
+            focusTarget: 'category',
+            legend: { position: 'top' },
+            hAxis: { title: '연도', format: 'yyyy'},
+            vAxis: { title: '인구 수', minValue: 0 }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
