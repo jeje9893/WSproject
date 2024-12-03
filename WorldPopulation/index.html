@@ -1,0 +1,49 @@
+<meta charset="utf-8" />
+
+<button id="makeDB">population DB만들기</button>
+<button id="loadXML">XML 파일 DB에 저장하기</button>
+<button id="showData">데이터 보기</button>
+
+<script>
+  document.getElementById("makeDB").addEventListener("click", function () {
+    fetch("phpPart/makingDB.php?action=createDB")
+      .then((response) => response.text())
+      .then((data) => alert(data))
+      .catch((error) => console.error("Error:", error));
+  });
+
+  document.getElementById("loadXML").addEventListener("click", function () {
+    fetch("phpPart/makingDB.php?action=loadXML")
+      .then((response) => response.text())
+      .then((data) => alert(data))
+      .catch((error) => console.error("Error:", error));
+  });
+
+  document.getElementById("showData").addEventListener("click", function () {
+    fetch("phpPart/makingDB.php?action=showData")
+      .then((response) => response.json())
+      .then((data) => {
+        let table =
+          "<table border='1'><tr><th>Country</th><th>Year</th><th>Population</th></tr>";
+        data.forEach((row) => {
+          table += `<tr>
+                     <td>${row.country}</td>
+                     <td>${row.year}</td>
+                     <td>${row.population}</td>
+                   </tr>`;
+        });
+        table += "</table>";
+        // 표를 표시할 위치에 삽입
+        let existingTable = document.getElementById("dataTable");
+        if (existingTable) {
+          existingTable.innerHTML = table;
+        } else {
+          let div = document.createElement("div");
+          div.id = "dataTable";
+          div.innerHTML = table;
+          document.body.appendChild(div);
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  });
+</script>
