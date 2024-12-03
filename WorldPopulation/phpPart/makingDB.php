@@ -72,16 +72,11 @@ if (isset($_GET['action'])) {
         $stmt->close();
         echo "XML 데이터가 성공적으로 저장되었습니다.";
         $conn->close();
-    } elseif ($action == 'showData') { // 수정된 부분
+    } elseif ($action == 'showData') {
         // XML 파일 읽기
         $xml = simplexml_load_file('UNdata_Export_20241128_044942230.xml');
-
-        $targetNames = ['Country or Area', 'Year', 'Value']; //이 부분 수정 중
-        foreach ($xml->record as $record) {
-            if ((string)$field['name'] === $targetName) {
-                echo "Field with name '{$targetName}' has value: " . (string)$field . PHP_EOL;
-            }
-        }
+        header('Content-Type: application/xml');
+        echo $xml->asXML();
     }
 }
 
