@@ -1,0 +1,36 @@
+<meta charset="UTF-8" />
+<link rel="StyleSheet" href="../table.css" type="text/css" />
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="./main.js"></script>
+<title>모드 선택</title>
+
+<div>
+  <nav>
+    <ul>
+      <li style="border-right: 1px solid black">
+        <a href="#" onclick="showMode(1)">세계지도</a>
+      </li>
+      <li style="border-right: 1px solid black">
+        <a href="WorldList.html">국가목록</a>
+      </li>
+      <li style="float: right"><a href="login.html">Log in</a></li>
+      <li style="float: right"><a href="sign_up.html">Sign up</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="modeContainer">
+  <div class="selectMode">
+    <div style="display: table-row">
+      <div class="mode" data-mode="1" onclick="showMode(1)">모드1</div>
+      <div class="mode" data-mode="2" onclick="showMode(2)">모드2</div>
+      <div class="mode" data-mode="3" onclick="showMode(3)">모드3</div>
+    </div>
+  </div>
+  <div class="window" id="modeWindow"></div>
+</div>
+<div id="chart_div" style="width: 900px; height: 600px; display: none"></div>
+
+<script>
+  showMode(1);
+</script>
