@@ -76,16 +76,44 @@ function showMode(mode) {
       { name: "Italy", population: 58697744, flag: "../img/Italy.png" },
       { name: "Spain", population: 48692804, flag: "../img/Spain.png" },
     ];
-  
-    flags.forEach((country) => {
+
+    // 인구수로 내림차순 정렬
+    flags.sort((a, b) => b.population - a.population);
+
+    const centerX = 450; // .window의 가로 크기 절반
+    const centerY = 300; // .window의 세로 크기 절반
+    let currentAngle = 0;
+    let currentRadius = 0;
+
+    flags.forEach((country, index) => {
+      const size = Math.sqrt(country.population) / 300; // 인구수에 따른 크기 계산
+      const flagRadius = size / 2;
+
+      let x, y;
+
+      if (index === 0) {
+        // 가장 큰 동그라미를 중앙에 배치
+        x = centerX - flagRadius;
+        y = centerY - flagRadius;
+        currentRadius = flagRadius;
+      } else {
+        // 반지름을 이전 반지름과 현재 반지름의 합으로 업데이트
+        currentRadius += flagRadius ;
+
+        // 각도를 일정하게 증가시켜 원형으로 배치
+        currentAngle += (2 * Math.PI) / (flags.length - 1);
+        x = centerX + currentRadius * Math.cos(currentAngle) - flagRadius;
+        y = centerY + currentRadius * Math.sin(currentAngle) - flagRadius;
+      }
+
       const img = document.createElement("img");
       img.src = country.flag;
       img.alt = country.name;
       img.className = "flagImage";
-      const size = Math.sqrt(country.population) / 1000; // 인구수에 따른 크기 계산
       img.style.width = `${size}px`;
       img.style.height = `${size}px`;
-      img.style.borderRadius = "50%"; // 동그라미 자르기
+      img.style.left = `${x}px`;
+      img.style.top = `${y}px`;
       modeWindow.appendChild(img);
     });
   }
