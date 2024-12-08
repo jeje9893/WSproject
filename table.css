@@ -55,6 +55,8 @@ li a {
 
 .window {
   display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
   position: relative;
   width: 900px;
   height: 600px;
@@ -82,6 +84,31 @@ li a {
 
 #chart_div {
   margin: 150px auto;
+}
+
+.flagImage {
+  object-fit: cover;
+  /* margin: 5px; */
+  margin: 0; /* 마진 제거 */
+  border-radius: 50%; /* 동그라미 자르기 */
+  position: absolute; /* 절대 위치 지정 */
+  cursor: pointer;
+}
+
+.flagImage:hover {
+  border: 2px solid blue;
+}
+
+.flagImage:hover::after { /* 마우스 올렸을 때 툴팁 */
+  content: attr(alt);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
 /* 로그인 부분 */
