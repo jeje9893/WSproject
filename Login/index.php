@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	if ($user && password_verify($password, $user['password'])) { // 비밀번호 검증
 		$_SESSION['username'] = $username; // 세션에 사용자 이름 저장
-		header("Location: /WorldMain/index.html"); // 메인 페이지로 리디렉션
+		header("Location: /WorldMain/index.php"); // 메인 페이지로 리디렉션
 		exit();
 	} else {
 		echo "잘못된 사용자 이름 또는 비밀번호입니다."; // 오류 메시지 출력

@@ -1,5 +1,6 @@
 <?php
 session_start();
+// 필요한 PHP 코드가 있다면 여기에 추가하세요.
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -20,14 +21,14 @@ session_start();
           <a href="#" onclick="showMode(1)">세계지도</a>
         </li>
         <li style="border-right: 1px solid black">
-          <a href="WorldList.html">국가목록</a>
+          <a href="../wl/WorldList.html">국가목록</a>
         </li>
         <?php if (isset($_SESSION['username'])): ?>
           <li style="float: right"><a href="#"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
-          <li style="float: right"><a href="logout.php">Log out</a></li>
+          <li style="float: right"><a href="../Login/logout.php">Log out</a></li>
         <?php else: ?>
-          <li style="float: right"><a href="../Login/login.html">Log in</a></li>
-          <li style="float: right"><a href="../Login/sign_up.html">Sign up</a></li>
+          <li style="float: right"><a href="../Login/login.php">Log in</a></li>
+          <li style="float: right"><a href="../Login/sign_up.php">Sign up</a></li>
         <?php endif; ?>
       </ul>
     </nav>

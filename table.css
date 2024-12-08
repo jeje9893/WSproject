@@ -143,3 +143,13 @@ li a {
 .bottomText {
   margin: 10px;
 }
+
+.IDcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  width: 500px;
+  height: 400px;
+  margin: 150px auto;
+}
