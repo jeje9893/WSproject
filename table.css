@@ -83,3 +83,9 @@ li a {
 #chart_div {
   margin: 150px auto;
 }
+
+.flagImage {
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 50%; /* 동그라미 자르기 */
+}

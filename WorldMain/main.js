@@ -54,6 +54,40 @@ function showMode(mode) {
     });
   }
   if (mode === 2) {
+    const flags = [
+      { name: "South Korea", population: 51271480, flag: "../img/South_Korea.png" },
+      { name: "Japan", population: 122631432, flag: "../img/Japan.png" },
+      { name: "China", population: 1425176357, flag: "../img/China.png" },
+      { name: "India", population: 1441719852, flag: "../img/India.png" },
+      { name: "Russia", population: 144820423, flag: "../img/Russia.png" },
+      { name: "Indonesia", population: 279798049, flag: "../img/Indonesia.png" },
+      { name: "Turkey", population: 86260417, flag: "../img/Turkey.png" },
+      { name: "Saudi Arabia", population: 37473929, flag: "../img/Saudi_Arabia.png" },
+      { name: "Australia", population: 26699482, flag: "../img/Australia.png" },
+      { name: "Brazil", population: 217637297, flag: "../img/Brazil.png" },
+      { name: "USA", population: 341814420, flag: "../img/USA.png" },
+      { name: "Canada", population: 39107046, flag: "../img/Canada.png" },
+      { name: "Mexico", population: 129388467, flag: "../img/Mexico.png" },
+      { name: "Germany", population: 83252474, flag: "../img/Germany.png" },
+      { name: "Netherlands", population: 17671125, flag: "../img/Netherlands.png" },
+      { name: "Switzerland", population: 8900000, flag: "../img/Switzerland.png" },
+      { name: "UK", population: 67961439, flag: "../img/UK.png" },
+      { name: "France", population: 67400000, flag: "../img/France.png" },
+      { name: "Italy", population: 58697744, flag: "../img/Italy.png" },
+      { name: "Spain", population: 48692804, flag: "../img/Spain.png" },
+    ];
+  
+    flags.forEach((country) => {
+      const img = document.createElement("img");
+      img.src = country.flag;
+      img.alt = country.name;
+      img.className = "flagImage";
+      const size = Math.sqrt(country.population) / 1000; // 인구수에 따른 크기 계산
+      img.style.width = `${size}px`;
+      img.style.height = `${size}px`;
+      img.style.borderRadius = "50%"; // 동그라미 자르기
+      modeWindow.appendChild(img);
+    });
   }
   if (mode === 3) {
     google.charts.load("current", { packages: ["corechart", "bar"] });
