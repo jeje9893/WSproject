@@ -3,15 +3,24 @@
 $servername = "localhost";
 $username = "root";
 $password = "1128";
-$dbname = "WorldPopulationDB";
+// $dbname = "WorldPopulationDB"
 
-// 데이터베이스 연결 생성
-$conn = new mysqli($servername, $username, $password, $dbname);
+// 데이터베이스 연결 생성 (DB 없이 연결)
+$conn = new mysqli($servername, $username, $password);
 
 // 연결 확인
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+// 데이터베이스 생성
+$sql = "CREATE DATABASE IF NOT EXISTS WorldPopulationDB";
+if ($conn->query($sql) === FALSE) {
+    die("Error creating database: " . $conn->error);
+}
+
+// 데이터베이스 선택
+$conn->select_db("WorldPopulationDB");
 
 // XML 파일 로드
 $xml = simplexml_load_file('Population.xml') or die("Error: Cannot create object");
