@@ -55,26 +55,26 @@ function showMode(mode) {
   }
   if (mode === 2) {
     const flags = [
-      { name: "South Korea", population: 51271480, flag: "../img/South_Korea.png" },
-      { name: "Japan", population: 122631432, flag: "../img/Japan.png" },
-      { name: "China", population: 1425176357, flag: "../img/China.png" },
-      { name: "India", population: 1441719852, flag: "../img/India.png" },
-      { name: "Russia", population: 144820423, flag: "../img/Russia.png" },
-      { name: "Indonesia", population: 279798049, flag: "../img/Indonesia.png" },
-      { name: "Turkey", population: 86260417, flag: "../img/Turkey.png" },
-      { name: "Saudi Arabia", population: 37473929, flag: "../img/Saudi_Arabia.png" },
-      { name: "Australia", population: 26699482, flag: "../img/Australia.png" },
-      { name: "Brazil", population: 217637297, flag: "../img/Brazil.png" },
-      { name: "USA", population: 341814420, flag: "../img/USA.png" },
-      { name: "Canada", population: 39107046, flag: "../img/Canada.png" },
-      { name: "Mexico", population: 129388467, flag: "../img/Mexico.png" },
-      { name: "Germany", population: 83252474, flag: "../img/Germany.png" },
-      { name: "Netherlands", population: 17671125, flag: "../img/Netherlands.png" },
-      { name: "Switzerland", population: 8900000, flag: "../img/Switzerland.png" },
-      { name: "UK", population: 67961439, flag: "../img/UK.png" },
-      { name: "France", population: 67400000, flag: "../img/France.png" },
-      { name: "Italy", population: 58697744, flag: "../img/Italy.png" },
-      { name: "Spain", population: 48692804, flag: "../img/Spain.png" },
+      { name: "South Korea", population: 51271480, flag: "../img/South_Korea.png", page: "../WorldList/South_Korea.html" },
+      { name: "Japan", population: 122631432, flag: "../img/Japan.png", page: "../WorldList/Japan.html" },
+      { name: "China", population: 1425176357, flag: "../img/China.png", page: "../WorldList/China.html" },
+      { name: "India", population: 1441719852, flag: "../img/India.png", page: "../WorldList/India.html" },
+      { name: "Russia", population: 144820423, flag: "../img/Russia.png", page: "../WorldList/Russia.html" },
+      { name: "Indonesia", population: 279798049, flag: "../img/Indonesia.png", page: "../WorldList/Indonesia.html" },
+      { name: "Turkey", population: 86260417, flag: "../img/Turkey.png", page: "../WorldList/Turkey.html" },
+      { name: "Saudi Arabia", population: 37473929, flag: "../img/Saudi_Arabia.png", page: "../WorldList/Saudi_Arabia.html" },
+      { name: "Australia", population: 26699482, flag: "../img/Australia.png", page: "../WorldList/Australia.html" },
+      { name: "Brazil", population: 217637297, flag: "../img/Brazil.png", page: "../WorldList/Brazil.html" },
+      { name: "USA", population: 341814420, flag: "../img/USA.png", page: "../WorldList/USA.html" },
+      { name: "Canada", population: 39107046, flag: "../img/Canada.png", page: "../WorldList/Canada.html" },
+      { name: "Mexico", population: 129388467, flag: "../img/Mexico.png", page: "../WorldList/Mexico.html" },
+      { name: "Germany", population: 83252474, flag: "../img/Germany.png", page: "../WorldList/Germany.html" },
+      { name: "Netherlands", population: 17671125, flag: "../img/Netherlands.png", page: "../WorldList/Netherlands.html" },
+      { name: "Switzerland", population: 8900000, flag: "../img/Switzerland.png", page: "../WorldList/Switzerland.html" },
+      { name: "UK", population: 67961439, flag: "../img/UK.png", page: "../WorldList/UK.html" },
+      { name: "France", population: 67400000, flag: "../img/France.png", page: "../WorldList/France.html" },
+      { name: "Italy", population: 58697744, flag: "../img/Italy.png", page: "../WorldList/Italy.html" },
+      { name: "Spain", population: 48692804, flag: "../img/Spain.png", page: "../WorldList/Spain.html" },
     ];
 
     // 인구수로 내림차순 정렬
@@ -86,8 +86,8 @@ function showMode(mode) {
     let currentRadius = 0;
 
     flags.forEach((country, index) => {
-      const size = Math.sqrt(country.population) / 300; // 인구수에 따른 크기 계산
-      const flagRadius = size / 2;
+      const size = Math.sqrt(country.population) / 200 +30; // 인구수에 따른 크기 계산
+      const flagRadius = size / 3;
 
       let x, y;
 
@@ -96,14 +96,23 @@ function showMode(mode) {
         x = centerX - flagRadius;
         y = centerY - flagRadius;
         currentRadius = flagRadius;
-      } else {
-        // 반지름을 이전 반지름과 현재 반지름의 합으로 업데이트
-        currentRadius += flagRadius ;
-
+      }
+      // else if (index === 1) {
+      //   // 두 번째 원을 첫 번째 원의 오른쪽에 배치
+      //   x = centerX + currentRadius + flagRadius;
+      //   y = centerY - flagRadius;
+      // }
+      else {
+        if (index === 1) {
+          // 세 번째 원에서만 currentRadius 증가
+          currentRadius += flagRadius + 10;
+          currentAngle -= (2 * Math.PI) / (flags.length - 2) + flagRadius / 50
+        }
         // 각도를 일정하게 증가시켜 원형으로 배치
-        currentAngle += (2 * Math.PI) / (flags.length - 1);
-        x = centerX + currentRadius * Math.cos(currentAngle) - flagRadius;
-        y = centerY + currentRadius * Math.sin(currentAngle) - flagRadius;
+        currentRadius += 10 - flagRadius * 0.15;
+        currentAngle += (2 * Math.PI) / (flags.length - 2) + flagRadius / 50;
+        x = centerX + currentRadius * Math.cos(currentAngle) - flagRadius ;
+        y = centerY + currentRadius * Math.sin(currentAngle) - flagRadius ;
       }
 
       const img = document.createElement("img");
@@ -114,6 +123,9 @@ function showMode(mode) {
       img.style.height = `${size}px`;
       img.style.left = `${x}px`;
       img.style.top = `${y}px`;
+      img.onclick = () => {
+        location.href = country.page;
+      };
       modeWindow.appendChild(img);
     });
   }
