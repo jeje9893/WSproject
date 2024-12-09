@@ -5,6 +5,12 @@ require 'db_config.php'; // 데이터베이스 설정 파일 포함
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username']; // 사용자 이름 입력값 받기
     $password = $_POST['password']; // 비밀번호 입력값 받기
+    $confirm_password = $_POST['confirm_password']; // 비밀번호 확인 입력값 받기
+
+    if ($password !== $confirm_password) {
+        echo "비밀번호가 일치하지 않습니다.";
+        exit();
+    }
 
     // 비밀번호 암호화
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
