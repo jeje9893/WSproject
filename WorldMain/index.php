@@ -1,6 +1,5 @@
 <?php
 session_start();
-// 필요한 PHP 코드가 있다면 여기에 추가하세요.
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -21,7 +20,10 @@ session_start();
           <a href="#" onclick="showMode(1)">세계지도</a>
         </li>
         <li style="border-right: 1px solid black">
-          <a href="../wl/WorldList.html">국가목록</a>
+          <a href="../wl/WorldList.php">국가목록</a>
+        </li>
+        <li style="border-right: 1px solid black">
+          <a href="../phpPart/index.html">DB에 데이터 넣기</a>
         </li>
         <?php if (isset($_SESSION['username'])): ?>
           <li style="float: right"><a href="#"><?php echo htmlspecialchars($_SESSION['username']); ?></a></li>
