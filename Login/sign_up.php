@@ -48,6 +48,10 @@ session_start();
       </div>
       <!-- 비밀번호 입력 필드 -->
       <br /><br />
+      <div><label for="confirm_password">비밀번호 확인 : </label>
+        <input type="password" id="confirm_password" name="confirm_password" required />
+      </div>
+      <br /><br />
       <button type="submit" style="position: relative; left: 80px;">가입</button>
       <!-- 회원가입 제출 버튼 -->
     </form>
