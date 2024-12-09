@@ -48,11 +48,6 @@ session_start();
       </div>
       <!-- 비밀번호 입력 필드 -->
       <br /><br />
-      <div><label for="password">pw 확인: </label>
-        <input type="password" id="password" name="password" required />
-      </div>
-      <!-- 비밀번호 입력 필드 -->
-      <br /><br />
       <button type="submit" style="position: relative; left: 80px;">가입</button>
       <!-- 회원가입 제출 버튼 -->
     </form>
