@@ -8,23 +8,56 @@
       <br />
 
       <p>회원가입 시 필요한 정보</p>
-      <p style="margin-left: 20px">1. 이메일</p>
+      <p style="margin-left: 20px">1. ID</p>
       <p style="margin-left: 40px">- key data로 활용</p>
-      <p style="margin-left: 20px">2. 비밀번호(확인)</p>
+      <p style="margin-left: 20px">2. 비밀번호</p>
       <p style="margin-left: 40px">- 암호화 해서 저장</p>
-      <p style="margin-left: 20px">3. 닉네임</p>
+      <p style="margin-left: 20px">3. 비밀번호 확인</p>
       <p style="margin-left: 40px">
-        - 사용자가 로그인 했을 때 보여줄 닉네임 (인사말, 현재 접속중인 아이디
-        표시용)
+        - 비밀번호와 비밀번호 확인이 일치하는지 확인
       </p>
       <br />
 
       <p>로그인 시 필요한 정보</p>
-      <p style="margin-left: 20px">1. 이메일</p>
+      <p style="margin-left: 20px">1. ID</p>
       <p style="margin-left: 40px">- key data로 활용</p>
       <p style="margin-left: 20px">2. 비밀번호</p>
       <p style="margin-left: 40px">
         - 입력받은 비밀번호를 암호화해서 데이터베이스와 대조
+      </p>
+      <br />
+
+      <p>구현 방법</p>
+      <p style="margin-left: 20px">1. 세션</p>
+      <p style="margin-left: 40px">
+        - 모든 페이지에서 세션을 시작하도록 만들고 로그인 성공 시 세션에
+        ID(username)를 저장<br />
+        로그인 된 상태면 네비게이션바에 로그인, 회원가입 버튼 대신 아이디와
+        로그아웃 버튼이 보이도록 함
+      </p>
+      <p style="margin-left: 20px">2. 비밀번호</p>
+      <p style="margin-left: 40px">
+        - 비밀번호는 평문으로 그대로 저장시 심각한 보안문제가 발생할 수 있기
+        때문에 암호화해서 저장<br />
+        - 로그인 시에도 사용자가 입력한 비밀번호를 암호화해서 데이터베이스에
+        저장된 암호화된 비밀번호와 대조
+      </p>
+      <img src="./img/pw.png" alt="암호화" width="60%" />
+      <br />
+
+      <p>구현 중 생긴 문제</p>
+      <p style="margin-left: 20px">1. 회원가입 데이터 오류</p>
+      <p style="margin-left: 40px">
+        - 회원 가입 시 db에 데이터가 제대로 전달되지 않는 오류가 생겨서 해결에
+        어려움을 겪음<br />
+        - 테이블의 타입설정이 잘못되어서 발생한 문제였음
+      </p>
+      <p style="margin-left: 20px">2. 비밀번호</p>
+      <p style="margin-left: 40px">
+        - 비밀번호를 암호화해서 저장은 했는데 로그인 시에 대조할 방법을 잘
+        몰랐음<br />
+        - 입력받은 비밀번호를 암호화하면 가입시에 암호화해서 데이터베이스에
+        저장된 비밀번호와 대조할 수 있음
       </p>
 
       <br /><br /><br /><br /><br />
