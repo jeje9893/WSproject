@@ -13,7 +13,7 @@ function showMode(mode) {
       // 아시아 국가
       { name: "5천백만", top: "36%", left: "41%", page: "../WorldList/South_Korea.html" },
       { name: "1억2천만", top: "36%", left: "45%", page: "../WorldList/Japan.html" },
-      { name: "14억1천만", top: "40%", left: "36%", page: "../WorldList/China.html" },
+      { name: "14억1천만", top: "40%", left: "34%", page: "../WorldList/China.html" },
       { name: "14억5천만", top: "44%", left: "27%", page: "../WorldList/India.html" },
       { name: "1억4천만", top: "26%", left: "35%", page: "../WorldList/Russia.html"},
       { name: "2억8천만", top: "54%", left: "36%", page: "../WorldList/Indonesia.html" },
@@ -24,12 +24,12 @@ function showMode(mode) {
       { name: "2천6백만", top: "66%", left: "42%", page: "../WorldList/Australia.html" },
 
       // 남아메리카 국가
-      { name: "2억1천만", top: "60%", left: "90%", page: "../WorldList/Brazil.html" },
+      { name: "2억1천만", top: "60%", left: "88%", page: "../WorldList/Brazil.html" },
 
       // 북아메리카 국가
       { name: "3억4천만", top: "34%", left: "74%", page: "../WorldList/USA.html" },
       { name: "3천9백만", top: "26%", left: "70%", page: "../WorldList/Canada.html" },
-      { name: "1억3천만", top: "41%", left: "75%", page: "../WorldList/Mexico.html" },
+      { name: "1억3천만", top: "41%", left: "74%", page: "../WorldList/Mexico.html" },
 
       // 유럽 국가
       { name: "8천4백만", top: "23%", left: "17%", page: "../WorldList/Germany.html" },
