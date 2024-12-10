@@ -100,6 +100,10 @@
         ]);
         
         var options = {
+            title: '인도네시아 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
@@ -107,7 +111,7 @@
             vAxis: { title: '인구 수', minValue: 0 }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
 </script>

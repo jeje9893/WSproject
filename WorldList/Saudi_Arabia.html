@@ -94,7 +94,7 @@
             [new Date(2016, 6, 1), 30717808, null, null],
             [new Date(2017, 6, 1), 30782402, null, null],
             [new Date(2018, 6, 1), 30365121, null, null],
-            [new Date(2019, 6, 1), 30472811, '사우디아라비아 드론 테러 사건', 'https://www.bbc.com/korean/international-49705340'],
+            [new Date(2019, 6, 1), 30472811, '드론 테러 사건', 'https://www.bbc.com/korean/international-49705340'],
             [new Date(2020, 6, 1), 30991207, null, null],
             [new Date(2021, 6, 1), 31328375, null, null],
             [new Date(2022, 6, 1), 32175352, null, null],
@@ -102,14 +102,19 @@
             [new Date(2024, 6, 1), 33962757, null, null]
         ]);
         var options = {
+            title: '사우디아라비아 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
             hAxis: { title: '연도', format: 'yyyy'},
-            vAxis: { title: '인구 수', minValue: 0 }
+            vAxis: { title: '인구 수', minValue: 0 },
+            tooltip: { isHtml: true }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         google.visualization.events.addListener(chart, 'select', function() {
             var selection = chart.getSelection();
             if (selection.length > 0) {

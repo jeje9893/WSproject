@@ -102,14 +102,19 @@
             [new Date(2024, 6, 1), 84552242, null, null]
         ]);
         var options = {
+            title: '독일 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
             hAxis: { title: '연도', format: 'yyyy'},
-            vAxis: { title: '인구 수', minValue: 0 }
+            vAxis: { title: '인구 수', minValue: 0 },
+            tooltip: { isHtml: true }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         google.visualization.events.addListener(chart, 'select', function() {
             var selection = chart.getSelection();
             if (selection.length > 0) {

@@ -89,7 +89,7 @@
             [new Date(2011, 6, 1), 74215203, null, null],
             [new Date(2012, 6, 1), 75197198, null, null],
             [new Date(2013, 6, 1), 76403031, null, null],
-            [new Date(2014, 6, 1), 78036154, '난민 유입으로 인한 인구 증가', 'https://www.bbc.com/korean/features-58168465'],
+            [new Date(2014, 6, 1), 78036154, '난민 유입', 'https://www.bbc.com/korean/features-58168465'],
             [new Date(2015, 6, 1), 80014226, null, null],
             [new Date(2016, 6, 1), 81652088, null, null],
             [new Date(2017, 6, 1), 83083662, null, null],
@@ -102,14 +102,19 @@
             [new Date(2024, 6, 1), 87473805, null, null]
         ]);
         var options = {
+            title: '튀르키예 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
             hAxis: { title: '연도', format: 'yyyy'},
-            vAxis: { title: '인구 수', minValue: 0 }
+            vAxis: { title: '인구 수', minValue: 0 },
+            tooltip: { isHtml: true }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         google.visualization.events.addListener(chart, 'select', function() {
             var selection = chart.getSelection();
             if (selection.length > 0) {

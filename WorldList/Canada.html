@@ -99,6 +99,10 @@
             [new Date(2024, 6, 1), 39742430]
         ]);
         var options = {
+            title: '캐나다 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
@@ -106,7 +110,7 @@
             vAxis: { title: '인구 수', minValue: 0 }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
         chart.draw(data, options);
     }
 </script>
