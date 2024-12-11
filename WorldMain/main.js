@@ -132,43 +132,61 @@ function showMode(mode) {
   if (mode === 3) {
     google.charts.load("current", { packages: ["corechart", "bar"] });
     google.charts.setOnLoadCallback(function () {
-      var data = google.visualization.arrayToDataTable([
-        ["국가", "인구수"],
-        ["미국", 341814420],
-        ["중국", 1425176357],
-        ["일본", 122631432],
-        ["독일", 83252474],
-        ["인도", 1441719852],
-        ["영국", 67961439],
-        ["프랑스", 67400000],
-        ["이탈리아", 58697744],
-        ["브라질", 217637297],
-        ["캐나다", 39107046],
-        ["호주", 26699482],
-        ["러시아", 144820423],
-        ["멕시코", 129388467],
-        ["대한민국", 51271480],
-        ["인도네시아", 279798049],
-        ["사우디 아라비아", 37473929],
-        ["스페인", 48692804],
-        ["네덜란드", 17671125],
-        ["튀르키예", 86260417],
-      ]);
+      var countries = [
+        { name: "미국", population: 341814420, page: "../WorldList/USA.html" },
+        { name: "중국", population: 1425176357, page: "../WorldList/China.html" },
+        { name: "일본", population: 122631432, page: "../WorldList/Japan.html" },
+        { name: "독일", population: 83252474, page: "../WorldList/Germany.html" },
+        { name: "인도", population: 1441719852, page: "../WorldList/India.html" },
+        { name: "영국", population: 67961439, page: "../WorldList/UK.html" },
+        { name: "프랑스", population: 67400000, page: "../WorldList/France.html" },
+        { name: "이탈리아", population: 58697744, page: "../WorldList/Italy.html" },
+        { name: "브라질", population: 217637297, page: "../WorldList/Brazil.html" },
+        { name: "캐나다", population: 39107046, page: "../WorldList/Canada.html" },
+        { name: "호주", population: 26699482, page: "../WorldList/Australia.html" },
+        { name: "러시아", population: 144820423, page: "../WorldList/Russia.html" },
+        { name: "멕시코", population: 129388467, page: "../WorldList/Mexico.html" },
+        { name: "대한민국", population: 51271480, page: "../WorldList/South_Korea.html" },
+        { name: "인도네시아", population: 279798049, page: "../WorldList/Indonesia.html" },
+        { name: "사우디 아라비아", population: 37473929, page: "../WorldList/Saudi_Arabia.html" },
+        { name: "스페인", population: 48692804, page: "../WorldList/Spain.html" },
+        { name: "네덜란드", population: 17671125, page: "../WorldList/Netherlands.html" },
+        { name: "튀르키예", population: 86260417, page: "../WorldList/Turkey.html" },
+      ];
+      
+      countries.sort(function(a, b) {
+        return a.population - b.population;
+      });
 
-      data.sort([{ column: 1, desc: false }]); // 내림차순 정렬
-
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', '국가');
+      data.addColumn('number', '인구수');
+  
+      countries.forEach(function(country) {
+        data.addRow([country.name, country.population]);
+      });
+  
       var options = {
         title: "GDP 상위 20개국 국가별 인구수",
         chartArea: { width: "70%" },
-        hAxis: {
-          minValue: 0,
-        },
-        bars: "horizontal", //가로막대 그래프 설정
+        hAxis: { minValue: 0 },
+        bars: "horizontal",
       };
-      var chart = new google.visualization.BarChart(
-        document.getElementById("modeWindow")
-      );
+
+      var chart = new google.visualization.BarChart(document.getElementById("modeWindow"));
       chart.draw(data, options);
+  
+      // 차트 선택 시 링크로 이동
+      google.visualization.events.addListener(chart, "select", function () {
+        var selectedItem = chart.getSelection()[0];
+        if (selectedItem) {
+          var countryName = data.getValue(selectedItem.row, 0); // 선택된 국가명 가져오기
+          var country = countries.find(function(c) { return c.name === countryName }); // 해당 국가 찾기
+          if (country) {
+            window.location.href = country.page; // 해당 국가 페이지로 이동
+          }
+        }
+      });
     });
   }
-}
+}  
