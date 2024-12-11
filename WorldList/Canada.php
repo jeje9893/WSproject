@@ -47,7 +47,7 @@ mysqli_close($conn);
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Year');
-        data.addColumn('number', 'Australia Population');
+        data.addColumn('number', 'Canada Population');
         data.addRows([
             <?php foreach ($chart_data as $data): ?>
                 ['<?= $data['year'] ?>', <?= $data['value'] ?>],
