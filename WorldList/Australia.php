@@ -38,7 +38,7 @@ mysqli_close($conn);
         <a href="../wl/WorldList.php">국가목록</a>
       </li>
       <li style="border-right: 1px solid black">
-        <a href="../phpPart/index.html">DB에 데이터 넣기</a>
+        <a href="../phpPart/index.php">DB에 데이터 넣기</a>
       </li>
       <?php if (isset($_SESSION['username'])): ?>
         <li style="float: right; border-left: 1px solid white"><a href="../Login/logout.php">Log out</a></li>

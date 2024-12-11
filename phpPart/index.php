@@ -7,6 +7,20 @@ session_start();
     <meta charset="utf-8" />
   <meta charset="UTF-8" />
   <link rel="StyleSheet" href="../table.css" type="text/css" />
+  <style>
+        .custom-button {
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+        }
+        .custom-button:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -29,6 +43,10 @@ session_start();
       </nav>
     </div>
     
-    <p><a href="test.php">DB에 데이터 넣기</a></p>
+    <div style="text-align: center; margin-top: 200px;">
+        <a href="test.php">
+            <button type="button" class="custom-button">DB에 데이터 넣기</button>
+        </a>
+    </div>
 </body>
 </html>
