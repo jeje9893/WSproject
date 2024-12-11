@@ -20,7 +20,7 @@ session_start();
           <a href="../WorldMain/" onclick="showMode(1)">세계지도</a>
         </li>
         <li style="border-right: 1px solid black">
-          <a href="../wl/WorldList.html">국가목록</a>
+          <a href="../wl/WorldList.php">국가목록</a>
         </li>
         <?php if (isset($_SESSION['username'])): ?>
           <li style="float: right"><?php echo htmlspecialchars($_SESSION['username']); ?></li>
