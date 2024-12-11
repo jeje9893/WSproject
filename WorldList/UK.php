@@ -54,6 +54,10 @@ mysqli_close($conn);
             <?php endforeach; ?>
         ]);
         var options = {
+            title: '영국 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },

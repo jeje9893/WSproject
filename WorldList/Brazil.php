@@ -47,13 +47,17 @@ mysqli_close($conn);
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Year');
-        data.addColumn('number', 'Australia Population');
+        data.addColumn('number', 'Brazil Population');
         data.addRows([
             <?php foreach ($chart_data as $data): ?>
                 ['<?= $data['year'] ?>', <?= $data['value'] ?>],
             <?php endforeach; ?>
         ]);
         var options = {
+            title: '브라질 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },

@@ -17,6 +17,13 @@ $result = mysqli_query($conn, $sql);
 
 $chart_data = array();
 while ($row = mysqli_fetch_assoc($result)) {
+    if ($row['year'] == 2011) {
+        $row['annotation'] = '동일본 대지진';
+        $row['annotationText'] = 'https://www.bbc.com/korean/international-56344646';
+    } else {
+        $row['annotation'] = null;
+        $row['annotationText'] = null;
+    }
     $chart_data[] = $row;
 }
 
@@ -47,21 +54,38 @@ mysqli_close($conn);
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Year');
-        data.addColumn('number', 'Australia Population');
+        data.addColumn('number', 'Japan Population');
+        data.addColumn({type: 'string', role: 'annotation'});
+        data.addColumn({type: 'string', role: 'annotationtext', 'p': {'html': true}});
         data.addRows([
             <?php foreach ($chart_data as $data): ?>
-                ['<?= $data['year'] ?>', <?= $data['value'] ?>],
+                ['<?= $data['year'] ?>', <?= $data['value'] ?>, <?= $data['annotation'] ? "'".$data['annotation']."'" : 'null' ?>, <?= $data['annotationText'] ? "'".$data['annotationText']."'" : 'null' ?>],
             <?php endforeach; ?>
         ]);
         var options = {
+            title: '일본 인구 수',
+            titleTextStyle: {
+                fontSize: 20
+            },
             curveType: 'function',
             focusTarget: 'category',
             legend: { position: 'top' },
             hAxis: { title: '연도', format: 'yyyy' },
-            vAxis: { title: '인구 수', minValue: 0 }
+            vAxis: { title: '인구 수', minValue: 0 },
+            tooltip: { isHtml: true }
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        google.visualization.events.addListener(chart, 'select', function() {
+            var selection = chart.getSelection();
+            if (selection.length > 0) {
+                var row = selection[0].row;
+                var url = data.getValue(row, 3);
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            }
+        });
         chart.draw(data, options);
     }
 </script>
