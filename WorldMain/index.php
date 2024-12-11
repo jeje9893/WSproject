@@ -8,7 +8,7 @@ session_start();
   <meta charset="UTF-8" />
   <link rel="StyleSheet" href="../table.css" type="text/css" />
   <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="./main.js"></script>
+  <script src="./main2.js"></script>
   <title>모드 선택</title>
 </head>
 

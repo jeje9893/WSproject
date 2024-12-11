@@ -12,7 +12,7 @@ if (!mysqli_select_db($conn, 'worldpopulationdb')) {
 }
 
 // 데이터 가져오기
-$sql = "SELECT year, value FROM country_united_states_of_america ORDER BY year ASC";
+$sql = "SELECT year, value FROM country_usa ORDER BY year ASC";
 $result = mysqli_query($conn, $sql);
 
 $chart_data = array();
