@@ -5,6 +5,8 @@ session_start();
 <html>
 <head>
     <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <link rel="StyleSheet" href="../table.css" type="text/css" />
 </head>
 <body>
     <div>

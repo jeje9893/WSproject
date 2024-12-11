@@ -50,7 +50,6 @@ foreach ($xml->data->record as $record) {
 
         // 테이블이 존재하지 않으면 생성
         $createTableSQL = "CREATE TABLE IF NOT EXISTS `$tableName` (
-            id INT AUTO_INCREMENT PRIMARY KEY,
             year INT(4) UNIQUE,
             value BIGINT(20)
         )";

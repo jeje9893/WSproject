@@ -12,7 +12,7 @@ if (!mysqli_select_db($conn, 'worldpopulationdb')) {
 }
 
 // 데이터 가져오기
-$sql = "SELECT year, value FROM country_australia ORDER BY year ASC";
+$sql = "SELECT year, value FROM country_russian_federation ORDER BY year ASC";
 $result = mysqli_query($conn, $sql);
 
 $chart_data = array();
@@ -47,7 +47,7 @@ mysqli_close($conn);
     function drawChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Year');
-        data.addColumn('number', 'Australia Population');
+        data.addColumn('number', 'Russia Population');
         data.addRows([
             <?php foreach ($chart_data as $data): ?>
                 ['<?= $data['year'] ?>', <?= $data['value'] ?>],
