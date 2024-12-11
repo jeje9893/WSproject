@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  clear: both;
-  background-color: beige;
-  border-bottom: 1px solid black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
+  background-color: black; /* 배경색을 검은색으로 변경 */
+  border-radius: 15px; /* 양쪽 끝을 둥글게 */
+  position: absolute;
+  top: 0%; /* 중상 상단으로 위치 조정 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* 너비를 90%로 변경 */
 }
 
 nav ul li {
@@ -22,7 +24,12 @@ li a {
   padding: 15px 15px;
   text-decoration: none;
   cursor: pointer;
-  color: black;
+  color: white; /* 글자색을 흰색으로 변경 */
+  border-right: 1px solid white; /* 오른쪽 경계선 추가 */
+}
+
+nav ul li:last-child a {
+  border-right: none; /* 마지막 버튼의 경계선 제거 */
 }
 
 .modeContainer {
@@ -175,4 +182,49 @@ li a {
   width: 500px;
   height: 400px;
   margin: 150px auto;
+}
+
+/* .formRow {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: flex-start; 
+} */
+
+/* 버튼을 중앙에 배치하려면 아래와 같이 변경 */
+ .formRow {
+   display: flex;
+   align-items: center;
+   margin: 10px;
+   justify-content: center;
+ }
+
+.formRow label {
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.formRow input {
+  flex: 1;
+  height: 30px;
+}
+
+.formButton {
+  width: 150px;
+  height: 40px;
+  background-color: #4CAF50; /* 녹색 배경 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.formButton:hover {
+  background-color: #45a049; /* 호버 시 진한 녹색 */
+}
+
+.formButton:active {
+  background-color: #367539; /* 클릭 시 더 진한 녹색 */
 }

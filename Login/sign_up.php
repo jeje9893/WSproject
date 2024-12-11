@@ -38,22 +38,24 @@ session_start();
       <p style="font-weight: bold; font-size: 20px;">회원가입</p>
     </div>
     <form action="signup.php" method="POST">
-      <div><label for="username">ID : </label>
+      <div class="formRow"><label for="username">ID : </label>
         <input type="text" id="username" name="username" required />
       </div>
       <!-- 사용자 이름 입력 필드 -->
-      <br /><br />
-      <div><label for="password">pw : </label>
+      <br />
+      <div class="formRow"><label for="password">pw : </label>
         <input type="password" id="password" name="password" required />
       </div>
       <!-- 비밀번호 입력 필드 -->
-      <br /><br />
-      <div><label for="confirm_password">비밀번호 확인 : </label>
+      <br />
+      <div class="formRow"><label for="confirm_password">비밀번호 확인 : </label>
         <input type="password" id="confirm_password" name="confirm_password" required />
       </div>
-      <br /><br />
-      <button type="submit" style="position: relative; left: 80px;">가입</button>
+      <br />
       <!-- 회원가입 제출 버튼 -->
+      <div class="formRow">
+        <button type="submit" class="formButton">가입</button>
+      </div>
     </form>
   </div>
   <div id="chart_div" style="width: 900px; height: 600px; display: none"></div>

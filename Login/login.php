@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 ?>
@@ -35,16 +34,21 @@ session_start();
     <div class="IDcontainer">
       <div style="margin-top: 20px;"><p style="font-weight: bold; font-size: 20px;">로그인</p></div>
       <form action="index.php" method="POST">
-        <div><label for="username">ID : </label>
-        <input type="text" id="username" name="username" required /></div>
+        <div class="formRow">
+          <label for="username">ID :</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <br>
         <!-- 사용자 이름 입력 필드 -->
-        <br /><br />
-        <div><label for="password">pw : </label>
-        <input type="password" id="password" name="password" required /></div>
+        <div class="formRow">
+          <label for="password">pw :</label>
+          <input type="password" id="password" name="password" required />
+        </div>
         <!-- 비밀번호 입력 필드 -->
-        <br /><br />
-        <button type="submit" style="position: relative; left: 80px;">로그인</button>
         <!-- 로그인 제출 버튼 -->
+        <div class="formRow">
+          <button type="submit" class="formButton">로그인</button>
+        </div>
       </form>
     </div>
     <div id="chart_div" style="width: 900px; height: 600px; display: none"></div>
