@@ -39,7 +39,8 @@ mysqli_close($conn);
     <nav>
         <ul>
             <li style="border-right: 1px solid black">
-                <a href="../WorldMain/" onclick="showMode(1)">세계지도</a>
+                <a href="../WorldMain/" onclick="showMode(1)"><img src="../img/worldMap_icon.png" alt="세계지도" style="height: 35px; vertical-align: middle;"></a>
+                </a>
             </li>
             <li style="border-right: 1px solid black">
                 <a href="../wl/WorldList.php">국가목록</a>
