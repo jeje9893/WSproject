@@ -53,6 +53,7 @@ session_start();
         <label for="password">pw :</label>
         <input type="password" id="password" name="password" required />
       </div>
+      <br>
       <!-- 비밀번호 입력 필드 -->
       <!-- 로그인 제출 버튼 -->
       <div class="formRow">
