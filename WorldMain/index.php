@@ -13,7 +13,7 @@ session_start();
 </head>
 
 <body>
-  <div>
+  <div style="height: 40px;">
     <nav>
       <ul>
         <li style="border-right: 1px solid black">
@@ -36,6 +36,10 @@ session_start();
         <?php endif; ?>
       </ul>
     </nav>
+  </div>
+
+  <div class="mainTitle">
+    <p>세계 인구 변화</p>
   </div>
 
   <div class="modeContainer">

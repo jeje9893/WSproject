@@ -4,6 +4,7 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
 }
 
+
 nav ul {
   background-color: rgb(27, 27, 27); /* 배경색을 검은색으로 변경 */
   border-radius: 15px; /* 양쪽 끝을 둥글게 */
@@ -41,6 +42,17 @@ nav ul li:last-child a {
   border-right: none; /* 마지막 버튼의 경계선 제거 */
 }
 
+.mainTitle {
+
+  text-align: center;
+  font-size: 30px;
+  margin-top: 75px;
+  position: relative;
+  z-index: -1;
+  font-size:40px;
+  font-weight: bold;
+}
+
 .modeContainer {
   display: flex;
   flex-direction: column;
@@ -48,7 +60,7 @@ nav ul li:last-child a {
   border: 2px solid black; /* 테두리를 두껍게 */
   border-radius: 10px; /* 테두리를 둥글게 */
   width: 1200px;
-  margin: 150px auto;
+  margin: 80px auto;
 }
 
 .selectMode {
