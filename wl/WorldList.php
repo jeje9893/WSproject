@@ -20,7 +20,7 @@ session_start();
 <nav>
       <ul>
         <li style="border-right: 1px solid black">
-          <a href="#" onclick="showMode(1)">
+          <a href="../WorldMain/" onclick="showMode(1)">
             <img src="../img/worldMap_icon.png" alt="세계지도" style="height: 35px; vertical-align: middle;">
           </a>
         </li>
