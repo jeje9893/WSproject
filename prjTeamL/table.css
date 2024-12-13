@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+nav ul {
+  background-color: rgb(27, 27, 27); /* 배경색을 검은색으로 변경 */
+  border-radius: 15px; /* 양쪽 끝을 둥글게 */
+  position: fixed;
+  top: 0%; /* 중상 상단으로 위치 조정 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* 너비를 90%로 변경 */
+  list-style-type: none; /* 리스트 스타일 제거 */
+  padding: 0; /* 패딩 제거 */
+  margin: 0; /* 마진 제거 */
+}
+
+nav ul li {
+  float: left;
+}
+
+li a {
+  display: block;
+  font-size: 20px;
+  padding: 15px 15px; /* 위아래 여백을 15px로 설정 */
+  text-decoration: none;
+  cursor: pointer;
+  color: white; /* 글자색을 흰색으로 변경 */
+  border-right: 1px solid white; /* 오른쪽 경계선 추가 */
+}
+
+nav ul li:first-child a {
+  border-right: none; /* 마지막 버튼의 경계선 제거 */
+  padding: 10px 15px; /* 위아래 여백을 10px로 설정 */
+  border-right: 1px solid white;
+}
+
+nav ul li:last-child a {
+  border-right: none; /* 마지막 버튼의 경계선 제거 */
+}
+
+.mainTitle {
+
+  text-align: center;
+  font-size: 30px;
+  margin-top: 75px;
+  position: relative;
+  z-index: -1;
+  font-size:40px;
+  font-weight: bold;
+}
+
+.modeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black; /* 테두리를 두껍게 */
+  border-radius: 10px; /* 테두리를 둥글게 */
+  width: 1200px;
+  margin: 80px auto;
+}
+
+.selectMode {
+  display: flex;
+  justify-content: right;
+  border-bottom: 2px solid black;
+  padding-bottom: 4px;
+  width: 100%;
+  height: 20px;
+}
+
+.mode {
+  display: table-cell;
+  cursor: pointer;
+  border-left: 2px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+
+.mode:hover {   /* 마우스 올렸을 때 버튼 */
+  background-color: aliceblue;
+}
+
+.mode:active {
+  box-shadow: 2px 2px 4px Darkgray inset;   /* 클릭했을 때 버튼 눌리는 효과 */
+}
+
+.window {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  position: relative;
+  width: 1200px;
+  height: 800px;
+}
+
+.window::after {  /* 가상 요소 */
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: lightblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.mapImage {
+  width: 900px;
+  height: auto;
+  z-index: -2;
+}
+
+.countryButton {
+  position: absolute;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.countryButton:hover {
+  background-color: aliceblue;
+  box-shadow: 1px 1px 0.5px black;
+  border-radius: 2px;
+}
+
+.countryButton:active {
+  box-shadow: 2px 2px 1px Darkgray inset;
+}
+
+#chart_div {
+  margin: 150px auto;
+}
+
+.flagImage {
+  object-fit: cover;
+  /* margin: 5px; */
+  margin: 0; /* 마진 제거 */
+  border-radius: 50%; /* 동그라미 자르기 */
+  position: absolute; /* 절대 위치 지정 */
+  cursor: pointer;
+}
+
+.flagImage:hover {
+  border: 2px solid blue;
+}
+
+.flagImage:hover::after { /* 마우스 올렸을 때 툴팁 */
+  content: attr(alt);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* 로그인 부분 */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  width: 450px;
+  margin: 150px auto;
+}
+
+.id {
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+}
+
+.pw {
+  width: 250px;
+  height: 30px;
+  margin: 10px;
+}
+
+.loginButton {
+  width: 150px;
+  height: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.bottomText {
+  margin: 10px;
+}
+
+.IDcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  margin: 150px auto;
+}
+
+/* .formRow {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  justify-content: flex-start; 
+} */
+
+/* 버튼을 중앙에 배치하려면 아래와 같이 변경 */
+ .formRow {
+   display: flex;
+   align-items: center;
+   margin: 10px;
+   justify-content: center;
+ }
+
+.formRow label {
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.formRow input {
+  flex: 1;
+  height: 30px;
+}
+
+.formButton {
+  position: relative;
+  
+  width: 150px;
+  height: 40px;
+  background-color: #4CAF50; /* 녹색 배경 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.formButton:hover {
+  background-color: #45a049; /* 호버 시 진한 녹색 */
+}
+
+.formButton:active {
+  background-color: #367539; /* 클릭 시 더 진한 녹색 */
+}
